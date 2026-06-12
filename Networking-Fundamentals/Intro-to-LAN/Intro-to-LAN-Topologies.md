@@ -1,171 +1,264 @@
-[Introduction-to-LAN-Topologies.md](https://github.com/user-attachments/files/28874454/Introduction-to-LAN-Topologies.md)
+# LAN Topologies
 
-LAN Topologies
-What is a Network Topology?
+## What is a Network Topology?
 
-A network topology refers to the physical or logical design/layout of a network and how devices are connected to each other.
+A **network topology** refers to the design or layout of a network and describes how devices are connected and communicate with one another.
 
-Common LAN topologies include:
+### Common LAN Topologies
 
-Star Topology
-Bus Topology
-Ring Topology
-1. Star Topology
-Overview
+- Star Topology
+- Bus Topology
+- Ring Topology
+
+---
+
+# Star Topology
+
+## Overview
 
 In a Star Topology, all devices connect to a central networking device such as a:
 
-Switch
-Hub
+- Switch
+- Hub
 
-All communication passes through the central device.
+All communication between devices passes through the central device.
 
-Structure
+### Structure
+
+```text
         PC
          |
 PC ---- Switch ---- PC
          |
-       Printer
-Advantages
-Reliable
-Failure of one device does not affect others.
-Scalable
-Easy to add new devices to the network.
-Easier Management
-Centralized control through a switch or hub.
-Disadvantages
-Expensive
-Requires more cabling.
-Requires dedicated networking equipment.
-Maintenance Required
-Larger networks require more monitoring and maintenance.
-Central Point of Failure
-If the switch or hub fails, all connected devices lose communication.
-2. Bus Topology
-Overview
+      Printer
+```
 
-A Bus Topology uses a single cable called a backbone cable.
+## Advantages
 
-All devices connect to this shared cable.
+### Scalability
+- Easy to add new devices.
+- Suitable for growing networks.
 
-Structure
+### Reliability
+- Failure of one device usually does not affect the rest of the network.
+
+### Easy Management
+- Centralized control through the switch or hub.
+
+## Disadvantages
+
+### Higher Cost
+- Requires more cabling.
+- Requires dedicated networking hardware.
+
+### Increased Maintenance
+- Larger networks require more monitoring and maintenance.
+
+### Central Point of Failure
+- If the switch or hub fails, all connected devices lose communication.
+
+---
+
+# Bus Topology
+
+## Overview
+
+A Bus Topology uses a single cable known as a **backbone cable**.
+
+All devices share this cable for communication.
+
+### Structure
+
+```text
 PC ---- PC ---- PC ---- PC
         |
    Backbone Cable
-Advantages
-Cost-Effective
-Requires less cabling.
-Easy Setup
-Simple network design.
-Minimal Hardware
-No need for expensive networking devices.
-Disadvantages
-Network Bottlenecks
-All traffic travels through one cable.
-Performance decreases as network traffic increases.
-Difficult Troubleshooting
-Hard to identify which device is causing issues.
-Single Point of Failure
-If the backbone cable breaks, the entire network fails.
-3. Ring Topology
-Overview
+```
 
-In a Ring Topology, devices connect directly to each other in a circular loop.
+## Advantages
 
-Data travels around the ring until it reaches its destination.
+### Cost-Effective
+- Requires less cabling.
+- Minimal networking hardware required.
 
-Structure
+### Easy Setup
+- Simple design and installation.
+
+## Disadvantages
+
+### Bottlenecks
+- All network traffic travels through one cable.
+- Performance decreases as traffic increases.
+
+### Difficult Troubleshooting
+- Hard to determine which device is causing network issues.
+
+### Single Point of Failure
+- If the backbone cable breaks, the entire network becomes unavailable.
+
+---
+
+# Ring Topology
+
+## Overview
+
+A Ring Topology connects devices in a circular loop.
+
+Each device is connected directly to the next device in the ring.
+
+### Structure
+
+```text
 PC ---- PC
 |        |
 |        |
 PC ---- PC
-How It Works
-Devices forward data around the ring.
-If a device has its own data to send, it sends that first.
-Data travels in one direction around the network.
-Advantages
-Less Cabling
-Requires less infrastructure than a star topology.
-Easier Troubleshooting
-Data follows a predictable path.
-Reduced Bottlenecks
-Traffic is distributed around the ring.
-Disadvantages
-Slower Communication
-Data may pass through multiple devices before reaching the destination.
-Entire Network Failure Risk
-A broken cable or failed device can disrupt the entire network.
-What is a Switch?
-Definition
+```
 
-A Switch is a networking device that connects multiple devices within a LAN.
+## How It Works
+
+- Data travels around the ring until it reaches the destination device.
+- Devices forward data to the next device in the loop.
+- If a device has its own data to send, it sends that data before forwarding received data.
+
+## Advantages
+
+### Less Cabling
+- Requires less infrastructure than a star topology.
+
+### Easier Troubleshooting
+- Data follows a predictable path.
+
+### Reduced Bottlenecks
+- Traffic is distributed around the ring.
+
+## Disadvantages
+
+### Slower Communication
+- Data may pass through multiple devices before reaching its destination.
+
+### Network-Wide Failure Risk
+- A broken cable or failed device can disrupt the entire network.
+
+---
+
+# What is a Switch?
+
+## Definition
+
+A **Switch** is a networking device that connects multiple devices within a Local Area Network (LAN).
 
 Examples of connected devices:
 
-Computers
-Printers
-Servers
-IP Phones
-Common Port Sizes
-4 Ports
-8 Ports
-16 Ports
-24 Ports
-32 Ports
-64 Ports
-How a Switch Works
+- Computers
+- Printers
+- Servers
+- IP Phones
 
-A switch keeps track of which device is connected to which port.
+## Common Port Configurations
 
-When receiving a packet:
+- 4 Ports
+- 8 Ports
+- 16 Ports
+- 24 Ports
+- 32 Ports
+- 64 Ports
 
-Switch
-Sends data only to the intended device.
-Hub
-Sends data to every connected device.
-Benefits of Switches
-Faster communication
-Reduced network traffic
-Improved efficiency
-Better performance than hubs
-Switch Redundancy
+## How a Switch Works
 
-Switches and routers can be interconnected to create multiple communication paths.
+A switch keeps track of which device is connected to each port.
 
-Benefits
-Increased Reliability
-Alternative paths exist if one connection fails.
-Reduced Downtime
-Network remains operational during failures.
-Trade-Off
-Packets may travel longer routes.
-Slight reduction in performance.
-What is a Router?
-Definition
+When a packet is received:
 
-A Router is a networking device that connects different networks and forwards data between them.
+- The switch identifies the destination device.
+- The packet is forwarded only to the correct port.
 
-Main Function
-Connect networks together.
-Direct traffic to its destination.
-Routing
+### Switch vs Hub
 
-Routing is the process of determining the path that data takes between networks.
+| Switch | Hub |
+|----------|----------|
+| Sends data only to the target device | Sends data to every connected device |
+| More efficient | Less efficient |
+| Reduces network traffic | Creates unnecessary traffic |
 
-Example
+## Benefits of Switches
+
+- Improved performance
+- Reduced network congestion
+- Efficient packet delivery
+- Better scalability
+
+---
+
+# Network Redundancy
+
+## What is Redundancy?
+
+Redundancy means creating multiple communication paths within a network.
+
+Switches and routers can be connected together to provide backup routes for data.
+
+### Advantages
+
+- Increased reliability
+- Reduced downtime
+- Alternative communication paths during failures
+
+### Disadvantage
+
+- Packets may travel longer routes.
+- Slight reduction in overall performance.
+
+---
+
+# What is a Router?
+
+## Definition
+
+A **Router** is a networking device that connects different networks and forwards data between them.
+
+## Main Responsibilities
+
+- Connect multiple networks.
+- Forward data between networks.
+- Determine the best path for data transmission.
+
+### Example
+
+```text
 Home Network
       |
     Router
       |
-Internet
+   Internet
       |
 Company Network
+```
 
-The router ensures that data travels through the correct path to reach its destination.
+---
 
-Key Takeaways
-A topology defines how devices are connected in a network.
-Star Topology is the most common due to reliability and scalability.
-Bus Topology is inexpensive but suffers from bottlenecks and single points of failure.
-Ring Topology reduces bottlenecks but can fail if one device or cable breaks.
-Switches connect devices within a LAN and forward data efficiently.
+# Routing
+
+## Definition
+
+**Routing** is the process of determining the path that data takes between networks.
+
+Routers use routing to ensure data reaches the correct destination efficiently.
+
+### Purpose of Routing
+
+- Connect separate networks.
+- Deliver data successfully.
+- Determine the most appropriate path for network traffic.
+
+---
+
+# Key Takeaways
+
+- A topology defines how devices are connected in a network.
+- Star Topology is the most common due to reliability and scalability.
+- Bus Topology is inexpensive but suffers from bottlenecks and single points of failure.
+- Ring Topology reduces bottlenecks but can fail if one device or cable breaks.
+- Switches connect devices within a LAN and efficiently forward data.
+- Routers connect different networks and use routing to move data between them.
+- Redundancy improves network reliability by providing multiple communication paths.
